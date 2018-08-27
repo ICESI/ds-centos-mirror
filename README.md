@@ -23,9 +23,9 @@ enabled=1
 gpgcheck=0
 --
 yum repolist
-yum —disablerepo="*" —enablerepo="icesi" list available
 yum update
-yum install nmap
+yum -—disablerepo="*" -—enablerepo="icesi" list available
+yum -—disablerepo="*" -—enablerepo="icesi" install nmap
 ```
 
 ### References
