@@ -16,7 +16,7 @@ ln -s /var/repo /var/www/html/repo
 ```
 vi /etc/yum.repos.d/icesi.repo
 --
-[icesi]
+[icesirepo]
 name=My RPM System Package Repo
 baseurl=http://127.0.0.1/repo
 enabled=1
@@ -24,8 +24,8 @@ gpgcheck=0
 --
 yum repolist
 yum update
-yum -—disablerepo="*" -—enablerepo="icesi" list available
-yum -—disablerepo="*" -—enablerepo="icesi" install nmap
+yum -—disablerepo="*" -—enablerepo="icesirepo" list available
+yum -—disablerepo="*" -—enablerepo="icesirepo" install nmap
 ```
 
 ### References
