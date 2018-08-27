@@ -16,9 +16,9 @@ ln -s /var/repo /var/www/html/repo
 ```
 vi /etc/yum.repos.d/icesi.repo
 --
-[repo_server-repo]
+[icesi]
 name=My RPM System Package Repo
-baseurl=http://[repo_server-ip]/repo
+baseurl=http://127.0.0.1/repo
 enabled=1
 gpgcheck=0
 --
