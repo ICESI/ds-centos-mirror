@@ -33,4 +33,26 @@ yum -—disablerepo="*" -—enablerepo="icesirepo" install nmap
 * https://www.ostechnix.com/download-rpm-package-dependencies-centos/
 * https://www.digitalocean.com/community/tutorials/how-to-set-up-and-use-yum-repositories-on-a-centos-6-vps
 
+#### Testing
+```
+$vi /etc/selinux/config
+---
+# This file controls the state of SELinux on the system.
+# SELINUX= can take one of these three values:
+#       enforcing - SELinux security policy is enforced.
+#       permissive - SELinux prints warnings instead of enforcing.
+#       disabled - No SELinux policy is loaded.
+SELINUX=disabled
+# SELINUXTYPE= can take one of these two values:
+#       targeted - Targeted processes are protected,
+#       mls - Multi Level Security protection.
+SELINUXTYPE=targeted
+---
+$reboot
+$getenforce
+Disabled
+
+yum install policycoreutils-python
+semanage fcontext -a -t httpd_sys_content_t "/var/repo(/.*)?" && restorecon -rv /var/repo
+```
 
