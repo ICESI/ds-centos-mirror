@@ -18,7 +18,7 @@ vi /etc/yum.repos.d/icesi.repo
 --
 [icesirepo]
 name=My RPM System Package Repo
-baseurl=http://127.0.0.1/repo
+baseurl=http://127.0.0.1/repo/
 enabled=1
 gpgcheck=0
 --
