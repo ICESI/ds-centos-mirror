@@ -25,10 +25,10 @@ gpgcheck=0
 --
 yum repolist
 yum update
-yum -—disablerepo="*" -—enablerepo="icesirepo" list available
+yum --disablerepo="*" --enablerepo="icesirepo" list available
 yum install policycoreutils-python
 semanage fcontext -a -t httpd_sys_content_t "/var/repo(/.*)?" && restorecon -rv /var/repo
-yum -—disablerepo="*" -—enablerepo="icesirepo" install nmap
+yum --disablerepo="*" --enablerepo="icesirepo" install nmap
 ```
 
 ### References
