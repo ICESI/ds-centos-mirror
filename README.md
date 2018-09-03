@@ -5,8 +5,9 @@
 mkdir /var/repo
 cd /var/repo
 yum install httpd
+systemctl start httpd
 yum install createrepo
-yum install yum-plugin-donwloadonly
+yum install yum-plugin-downloadonly
 yum install --downloadonly --downloaddir=/var/repo nmap
 createrepo /var/repo/
 ln -s /var/repo /var/www/html/repo 
