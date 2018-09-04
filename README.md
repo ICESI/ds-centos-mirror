@@ -43,6 +43,10 @@ yum --disablerepo="*" --enablerepo="icesirepo" install nmap
 * https://www.ostechnix.com/download-rpm-package-dependencies-centos/
 * https://www.digitalocean.com/community/tutorials/how-to-set-up-and-use-yum-repositories-on-a-centos-6-vps
 
+### FAQ
+* I'm not able to execute the yum update command 
+R/ setenforce 0 (use with caution)
+
 #### Alternatives (Not recommended)
 ```
 vi /etc/selinux/config
