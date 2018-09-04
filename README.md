@@ -11,23 +11,31 @@ yum install yum-plugin-downloadonly
 yum install --downloadonly --downloaddir=/var/repo nmap
 createrepo /var/repo/
 ln -s /var/repo /var/www/html/repo 
+yum install policycoreutils-python
+semanage fcontext -a -t httpd_sys_content_t "/var/repo(/.*)?" && restorecon -rv /var/repo
 ```
 
 #### Client
+```
+vi /etc/hosts
+---
+192.168.131.23 icesi.mirror.edu.co
+---
+```
+
 ```
 vi /etc/yum.repos.d/icesi.repo
 --
 [icesirepo]
 name=My RPM System Package Repo
-baseurl=http://127.0.0.1/repo/
+baseurl=http://icesi.mirror.edu.co/repo/
 enabled=1
 gpgcheck=0
 --
 yum repolist
 yum update
 yum --disablerepo="*" --enablerepo="icesirepo" list available
-yum install policycoreutils-python
-semanage fcontext -a -t httpd_sys_content_t "/var/repo(/.*)?" && restorecon -rv /var/repo
+
 yum --disablerepo="*" --enablerepo="icesirepo" install nmap
 ```
 
