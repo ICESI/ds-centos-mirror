@@ -35,7 +35,6 @@ gpgcheck=0
 yum repolist
 yum update
 yum --disablerepo="*" --enablerepo="icesirepo" list available
-
 yum --disablerepo="*" --enablerepo="icesirepo" install nmap
 ```
 
