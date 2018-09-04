@@ -6,6 +6,7 @@ mkdir /var/repo
 cd /var/repo
 yum install httpd
 systemctl start httpd
+systemctl enable httpd
 yum install createrepo
 yum install yum-plugin-downloadonly
 yum install --downloadonly --downloaddir=/var/repo nmap
